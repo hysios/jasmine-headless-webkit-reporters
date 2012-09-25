@@ -2,9 +2,10 @@
 #
 class jasmine.HeadlessReporter.JUnit extends jasmine.JUnitXmlReporter
   constructor: (@outputTarget = null) ->
+    super(@outputTarget)
 
   writeFile: (filename, text) =>
-    JHW.print(@outputTarget, text)
+    JHW.printFile(filename, text)
 
   reportSpecResults: (spec) =>
     JHW.ping()
